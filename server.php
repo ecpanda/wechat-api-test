@@ -18,6 +18,13 @@ $config = [
 
 $app = EasyWeChat\Factory::officialAccount($config);
 
+$app->server->push(function ($message) use ($app) {
+    $user = $app->user->get($message['FromUserName']);
+    $nick_name = $user->getNickname();
+
+    return "您好, {$nick_name}！欢迎使用 EasyWeChat";
+});
+
 $response = $app->server->serve();
 
 // 将响应输出
