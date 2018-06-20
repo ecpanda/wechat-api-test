@@ -7,7 +7,7 @@ $config['oauth'] = [
     'callback' => 'oauth_callback.php'
 ];
 
-$app = EasyWeChat\Factory::officialAccount($config);
+$app = new Jwechat\OfficalApplication($config);
 $oauth = $app->oauth;
 
 if (empty($_SESSION['wechat_user'])) {

@@ -39,6 +39,10 @@ class ComposerStaticInit97448c9291a79764bfac5289c8543f9d
         array (
             'Monolog\\' => 8,
         ),
+        'J' => 
+        array (
+            'Jwechat\\' => 8,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
@@ -96,6 +100,10 @@ class ComposerStaticInit97448c9291a79764bfac5289c8543f9d
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Jwechat\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
