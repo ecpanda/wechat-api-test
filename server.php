@@ -2,6 +2,8 @@
 
 include __DIR__ . '/vendor/autoload.php';
 
+define('BASE_PATH', __DIR__);
+
 $config = [
     'app_id' => 'wxff9c142e93044137',
     'secret' => '28c654c04c3ab0b5e7866f6016d6c6f5',
@@ -19,6 +21,7 @@ $config = [
 $app = EasyWeChat\Factory::officialAccount($config);
 
 $app->server->push(function ($message) use ($app) {
+    Jwechat\Util::debug($message);
     // $user = $app->user->get($message['FromUserName']);
     // $nick_name = $user->getNickname();
 
