@@ -23,9 +23,16 @@ $app = EasyWeChat\Factory::officialAccount($config);
 $app->server->push(function ($message) use ($app) {
     $user = $app->user->get($message['FromUserName']);
 
-    $tpls = $app->template_message->getPrivateTemplates();
-
-    Jwechat\Util::debug($tpls);
+    $app->template_message->sendSubscription([
+        'touser' => $user['openid'],
+        'template_id' => 'xV_FigE7nVjW9gaIOnpVQF7x8gW0QwSFsE_aLgR2oHs',
+        'url' => 'https://easywechat.org',
+        'scene' => 1000,
+        'data' => [
+            'title' => ['测试模板回复标题', '#F00'],
+            'content' => '测试模板回复内容',
+        ],
+    ]);
 
     return "您好{$user['nickname']}, 欢迎使用 EasyWeChat";
 });
