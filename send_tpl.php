@@ -20,13 +20,19 @@ $config = [
 
 $app = EasyWeChat\Factory::officialAccount($config);
 
-$app->server->push(function ($message) use ($app) {
-    $user = $app->user->get($message['FromUserName']);
+$users = $app->user->list();
 
-    return "您好{$user['nickname']}, 欢迎使用 EasyWeChat";
-});
+Jwechat\Util::debug($users);
 
-$response = $app->server->serve();
+// $app->template_message->send([
+//     'touser' => 'oBHttwloPVEvyZXbh-LMaHV8h6kk',
+//     'template_id' => 'xV_FigE7nVjW9gaIOnpVQF7x8gW0QwSFsE_aLgR2oHs',
+//     'url' => 'https://easywechat.org',
+//     'scene' => 1000,
+//     'data' => [
+//         'title' => ['测试模板回复标题', '#F00'],
+//         'content' => '测试模板回复内容',
+//     ],
+// ]);
 
-// 将响应输出
-$response->send();
+
