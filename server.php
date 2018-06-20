@@ -23,6 +23,10 @@ $app = EasyWeChat\Factory::officialAccount($config);
 $app->server->push(function ($message) use ($app) {
     $user = $app->user->get($message['FromUserName']);
 
+    $tpls = $app->template_message->getPrivateTemplates();
+
+    Jwechat\Util::debug($tpls);
+
     return "您好{$user['nickname']}, 欢迎使用 EasyWeChat";
 });
 
