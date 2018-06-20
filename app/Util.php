@@ -12,10 +12,6 @@ class Util
      */
     public static function debug($data) 
     {
-        if (is_null($path)) {
-            $path = storage_path();
-        }
-
         $fp = fopen(sprintf('%s/logs/debug_%s.log', BASE_PATH, time()), 'a+');
 
         if (is_array($data)) {
