@@ -16,7 +16,7 @@ class Util
             $path = storage_path();
         }
 
-        $fp = fopen(sprintf('%s/debug_%s.log', BASE_PATH, time()), 'a+');
+        $fp = fopen(sprintf('%s/logs/debug_%s.log', BASE_PATH, time()), 'a+');
 
         if (is_array($data)) {
             $data = print_r($data, true);
