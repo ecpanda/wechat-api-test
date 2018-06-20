@@ -4,7 +4,7 @@ include __DIR__ . '/bootstrap.php';
 
 $config['oauth'] = [
     'scopes'   => ['snsapi_userinfo'],
-    'callback' => '/oauth_callback.php'
+    'callback' => 'oauth_callback.php'
 ];
 
 $app = EasyWeChat\Factory::officialAccount($config);
@@ -14,5 +14,5 @@ $user = $oauth->user();
 
 $_SESSION['wechat_user'] = $user->toArray();
 
-header('location: /profile.php'); 
+header('location: http://178.128.212.241/profile.php'); 
 
