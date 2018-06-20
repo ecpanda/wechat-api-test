@@ -13,6 +13,7 @@ $oauth = $app->oauth;
 $user = $oauth->user();
 
 $_SESSION['wechat_user'] = $user->toArray();
+$_SESSION['type'] = $app->request->query->get('type');
 
 header('location: http://178.128.212.241/profile.php'); 
 

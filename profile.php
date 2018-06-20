@@ -14,8 +14,5 @@ if (empty($_SESSION['wechat_user'])) {
     $oauth->redirect()->send();
 }
 
-$user = $_SESSION['wechat_user'];
-
-echo 'type: '. $app->request->input('type');
-var_dump($user);
+var_dump($_SESSION);
 
