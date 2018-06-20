@@ -2,7 +2,7 @@
 
 namespace Jwechat;
 
-use EasyWeChat\OfficialAccount\Application;
+use EasyWeChat\OfficialAccount;
 
 class OfficalApplication extends Application
 {
