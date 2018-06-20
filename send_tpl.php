@@ -20,19 +20,14 @@ $config = [
 
 $app = EasyWeChat\Factory::officialAccount($config);
 
-$users = $app->user->list();
-
-Jwechat\Util::debug($users);
-
-// $app->template_message->send([
-//     'touser' => 'oBHttwloPVEvyZXbh-LMaHV8h6kk',
-//     'template_id' => 'xV_FigE7nVjW9gaIOnpVQF7x8gW0QwSFsE_aLgR2oHs',
-//     'url' => 'https://easywechat.org',
-//     'scene' => 1000,
-//     'data' => [
-//         'title' => ['测试模板回复标题', '#F00'],
-//         'content' => '测试模板回复内容',
-//     ],
-// ]);
+$app->template_message->send([
+    'touser' => 'oBHttwloPVEvyZXbh-LMaHV8h6kk',
+    'template_id' => 'xV_FigE7nVjW9gaIOnpVQF7x8gW0QwSFsE_aLgR2oHs',
+    'url' => 'http//www.baidu.com',
+    'data' => [
+        'title' => ['回复标题', '#F00'],
+        'content' => '回复内容'
+    ],
+]);
 
 
