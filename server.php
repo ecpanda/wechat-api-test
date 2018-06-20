@@ -23,9 +23,7 @@ $app = EasyWeChat\Factory::officialAccount($config);
 $app->server->push(function ($message) use ($app) {
     $user = $app->user->get($message['FromUserName']);
 
-    Jwechat\Util::debug($user);
-
-    return "您好, 欢迎使用 EasyWeChat";
+    return "您好{$user['nickname']}, 欢迎使用 EasyWeChat";
 });
 
 $response = $app->server->serve();
