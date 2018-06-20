@@ -16,7 +16,7 @@ $config = [
     ],
 ];
 
-$app = Factory::officialAccount($config);
+$app = EasyWeChat\Factory::officialAccount($config);
 
 $response = $app->server->serve();
 
