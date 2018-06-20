@@ -23,7 +23,7 @@ $app = EasyWeChat\Factory::officialAccount($config);
 $app->server->push(function ($message) use ($app) {
     $user = $app->user->get($message['FromUserName']);
 
-    $app->template_message->sendSubscription([
+    return $app->template_message->send([
         'touser' => $user['openid'],
         'template_id' => 'xV_FigE7nVjW9gaIOnpVQF7x8gW0QwSFsE_aLgR2oHs',
         'url' => 'https://easywechat.org',
