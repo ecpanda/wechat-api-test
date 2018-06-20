@@ -2,6 +2,8 @@
 
 include __DIR__ . '/bootstrap.php';
 
+$config['token'] = 'wechatoken';
+
 $app = Factory::officialAccount($config);
 
 $response = $app->server->serve();
