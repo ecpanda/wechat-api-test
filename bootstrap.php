@@ -2,6 +2,7 @@
 
 include __DIR__ . '/vendor/autoload.php';
 
+session_start();
 
 $config = [
     'app_id' => 'wxff9c142e93044137',
