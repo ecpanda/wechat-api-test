@@ -7,6 +7,9 @@ $config['oauth'] = [
     'callback' => 'oauth_callback.php?type=1'
 ];
 
+Jwechat\Util::debug($_SERVER);
+Jwechat\Util::debug($_REQUEST);
+
 $app = EasyWeChat\Factory::officialAccount($config);
 $oauth = $app->oauth;
 
