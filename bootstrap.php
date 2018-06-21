@@ -2,6 +2,8 @@
 
 include __DIR__ . '/vendor/autoload.php';
 
+define('BASE_PATH', __DIR__);
+
 session_start();
 
 $config = [
